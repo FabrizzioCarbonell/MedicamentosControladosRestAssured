@@ -5,6 +5,7 @@ import io.restassured.parsing.Parser;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import test.DTO.*;
+import test.Helpers.AuthHelper;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SaleWithoutPrescription {
 
-    String jwt = "eyJhbGciOiJIUzUxMiIsInQiOjJ9.eyJiIjoxMjA4NzIsImMiOiI1YmJhNzg0Ni1kZWRmLTRiZDgtOWI0MS05NDFkNTRkZTJmNTYiLCJleHAiOjE3MjY3MDIxNzcsImkiOiJub25lIiwiaWF0IjoxNzI2NjczMzc3LCJqdGkiOiJmYWJyaXp6aW8rcWFAc2ljYXIubXgiLCJuIjoiMyIsInAiOiJBRE1JTiIsInIiOiI2OTA2MjcxZC1lYzg1LTQ4ZGYtYmRhOC01NGM1YWQ0NTk0ZGUiLCJ1IjoiZGEwYWY5ZDYtZjlmOS00ZTZlLTg0YmUtNDc2MTJmYzVkYWVlIiwidWEiOiJGQUJSSUkgUFJVRUJBUyIsIngiOjIzOTA0fQ.guEqfY5F7Ics1qx_ft0UHFf4tClJpUC7aRUn6alz7LW7_b-TCzNpY9cPRVTQbjowiGDAqie6Ykn7WcMnU5Ni-g";
+    String jwt = AuthHelper.getCompanyJwtToken();
     public static String generateRandomUUID() {return UUID.randomUUID().toString();}
 
     //Consumir DTO mediante Builder
